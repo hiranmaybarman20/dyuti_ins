@@ -1,1644 +1,251 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Successful Students | Dyuti Institute</title>
+    <title>Successful Students | Dyuti Institute</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
 
-<style>
-
-:root{
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --secondary:#0f172a;
-    --text:#1e293b;
-    --muted:#64748b;
-    --light:#f8fafc;
-    --white:#ffffff;
-    --gold:#f59e0b;
-    --border:#e2e8f0;
-    --shadow:0 15px 40px rgba(15,23,42,.08);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:"Inter",sans-serif;
-    background:#f8fafc;
-    color:var(--text);
-}
-
-/* ================= HEADER ================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(226,232,240,.8);
-}
-
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    height:75px;
-    padding:0 25px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-    color:var(--secondary);
-}
-
-.logo-icon{
-    width:45px;
-    height:45px;
-    border-radius:12px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    color:white;
-    font-size:22px;
-    font-weight:800;
-}
-
-.logo-text h2{
-    font-size:20px;
-    font-weight:800;
-}
-
-.logo-text span{
-    font-size:11px;
-    color:var(--muted);
-}
-
-.nav-links{
-    display:flex;
-    gap:28px;
-    list-style:none;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:#475569;
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:var(--primary);
-}
-
-.menu-btn{
-    display:none;
-    border:none;
-    background:none;
-    font-size:25px;
-    cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:450px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:80px 20px;
-
-    background:
-        radial-gradient(circle at 20% 20%,rgba(37,99,235,.18),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(124,58,237,.16),transparent 30%),
-        linear-gradient(135deg,#eff6ff,#ffffff);
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.badge{
-    display:inline-flex;
-    padding:8px 16px;
-    border-radius:50px;
-
-    background:#dbeafe;
-    color:#1d4ed8;
-
-    font-size:13px;
-    font-weight:700;
-
-    margin-bottom:22px;
-}
-
-.hero h1{
-    font-family:"Playfair Display",serif;
-    font-size:clamp(40px,6vw,68px);
-    line-height:1.05;
-    color:#0f172a;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:var(--primary);
-}
-
-.hero p{
-    max-width:650px;
-    margin:auto;
-
-    color:#64748b;
-    line-height:1.8;
-    font-size:16px;
-}
-
-/* ================= STATS ================= */
-
-.stats{
-    max-width:1050px;
-    margin:-45px auto 60px;
-    padding:0 20px;
-
-    position:relative;
-    z-index:2;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.stat-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:25px;
-
-    text-align:center;
-
-    box-shadow:var(--shadow);
-
-    transition:.3s;
-}
-
-.stat-card:hover{
-    transform:translateY(-5px);
-}
-
-.stat-card .icon{
-    font-size:25px;
-    margin-bottom:8px;
-}
-
-.stat-card h3{
-    font-size:30px;
-    color:#0f172a;
-}
-
-.stat-card p{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:5px;
-}
-
-/* ================= MAIN ================= */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 25px 80px;
-}
-
-.section-heading{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.section-heading h2{
-    font-family:"Playfair Display",serif;
-    font-size:38px;
-    color:#0f172a;
-}
-
-.section-heading p{
-    margin-top:10px;
-    color:var(--muted);
-}
-
-/* ================= FILTER ================= */
-
-.controls{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-    margin-bottom:35px;
-    flex-wrap:wrap;
-}
-
-.sessions{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-}
-
-.session-btn{
-    border:1px solid var(--border);
-    background:white;
-    color:#475569;
-
-    padding:11px 20px;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    font-size:13px;
-    font-weight:700;
-
-    transition:.3s;
-}
-
-.session-btn:hover{
-    border-color:var(--primary);
-    color:var(--primary);
-}
-
-.session-btn.active{
-    background:var(--primary);
-    border-color:var(--primary);
-    color:white;
-    box-shadow:0 8px 20px rgba(37,99,235,.25);
-}
-
-.search-box{
-    position:relative;
-}
-
-.search-box input{
-    width:250px;
-
-    padding:13px 18px 13px 42px;
-
-    border:1px solid var(--border);
-    border-radius:50px;
-
-    outline:none;
-
-    font-family:inherit;
-
-    background:white;
-}
-
-.search-box input:focus{
-    border-color:var(--primary);
-}
-
-.search-icon{
-    position:absolute;
-    left:16px;
-    top:12px;
-}
-
-/* ================= STUDENT GRID ================= */
-
-.student-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.student-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:22px;
-    overflow:hidden;
-
-    box-shadow:0 8px 25px rgba(15,23,42,.05);
-
-    transition:.4s;
-
-    animation:fadeUp .5s ease;
-}
-
-.student-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 45px rgba(15,23,42,.12);
-}
-
-.student-image{
-    height:260px;
-    position:relative;
-    overflow:hidden;
-    background:#e2e8f0;
-}
-
-.student-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    transition:.5s;
-}
-
-.student-card:hover .student-image img{
-    transform:scale(1.06);
-}
-
-.rank{
-    position:absolute;
-    top:15px;
-    left:15px;
-
-    background:linear-gradient(135deg,#f59e0b,#f97316);
-    color:white;
-
-    padding:7px 13px;
-
-    border-radius:50px;
-
-    font-size:12px;
-    font-weight:800;
-
-    box-shadow:0 5px 15px rgba(245,158,11,.3);
-}
-
-.session-label{
-    position:absolute;
-    right:15px;
-    top:15px;
-
-    background:rgba(15,23,42,.75);
-    color:white;
-
-    padding:7px 12px;
-
-    border-radius:50px;
-
-    font-size:11px;
-    font-weight:700;
-}
-
-.student-info{
-    padding:22px;
-}
-
-.student-info h3{
-    font-size:20px;
-    color:#0f172a;
-    margin-bottom:7px;
-}
-
-.student-info .course{
-    color:var(--primary);
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-.details{
-    border-top:1px solid var(--border);
-    padding-top:15px;
-
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
-
-.detail{
-    display:flex;
-    gap:9px;
-    align-items:flex-start;
-
-    color:#64748b;
-    font-size:12px;
-}
-
-.detail strong{
-    color:#334155;
-}
-
-/* ================= EMPTY ================= */
-
-.empty{
-    text-align:center;
-    padding:70px 20px;
-
-    display:none;
-}
-
-.empty .emoji{
-    font-size:50px;
-    margin-bottom:15px;
-}
-
-.empty h3{
-    color:#334155;
-    margin-bottom:7px;
-}
-
-.empty p{
-    color:#64748b;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#0f172a;
-    color:white;
-
-    padding:50px 20px 25px;
-
-    text-align:center;
-}
-
-.footer-logo{
-    font-size:24px;
-    font-weight:800;
-    margin-bottom:10px;
-}
-
-footer p{
-    color:#94a3b8;
-    font-size:13px;
-}
-
-.copyright{
-    border-top:1px solid rgba(255,255,255,.1);
-    margin-top:30px;
-    padding-top:20px;
-
-    color:#64748b;
-    font-size:12px;
-}
-
-/* ================= ANIMATION ================= */
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:900px){
-
-    .student-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:700px){
-
-    .nav-links{
-        display:none;
-
-        position:absolute;
-        top:75px;
-        left:0;
-        right:0;
-
-        background:white;
-
-        padding:20px;
-
-        flex-direction:column;
-
-        border-bottom:1px solid var(--border);
-    }
-
-    .nav-links.show{
-        display:flex;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-        margin-top:30px;
-    }
-
-    .controls{
-        align-items:stretch;
-    }
-
-    .sessions{
-        width:100%;
-        justify-content:center;
-    }
-
-    .search-box{
-        width:100%;
-    }
-
-    .search-box input{
-        width:100%;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .hero{
-        padding:65px 20px;
-        min-height:400px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .section-heading h2{
-        font-size:31px;
-    }
-
-    .student-grid{
-        grid-template-columns:1fr;
-    }
-
-    .student-image{
-        height:300px;
-    }
-
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- HEADER -->
+    <header>
 
-<header>
+        <nav class="navbar">
 
-<nav class="navbar">
+            <a href="#" class="logo">
 
-<a href="#" class="logo">
+                <div class="logo-icon">
+                    D
+                </div>
 
-<div class="logo-icon">
-D
-</div>
+                <div class="logo-text">
+                    <h2>Dyuti Institute</h2>
+                    <span>JENPAS(UG) • ANM • GNM</span>
+                </div>
 
-<div class="logo-text">
-<h2>Dyuti Institute</h2>
-<span>JENPAS(UG) • ANM • GNM</span>
-</div>
+            </a>
 
-</a>
+            <ul class="nav-links" id="navLinks">
 
-<ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="#">Home</a>
+                </li>
 
-<li><a href="#">Home</a></li>
-<li><a href="#students">Our Stars</a></li>
-<li><a href="#sessions">Sessions</a></li>
-<li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#students">Our Stars</a>
+                </li>
 
-</ul>
+                <li>
+                    <a href="#sessions">Sessions</a>
+                </li>
 
-<button class="menu-btn" onclick="toggleMenu()">
-☰
-</button>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
 
-</nav>
+            </ul>
 
-</header>
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
 
+        </nav>
 
-<!-- ================= HERO ================= -->
+    </header>
 
-<section class="hero">
 
-<div class="hero-content">
+    <!-- HERO -->
+    <section class="hero">
 
-<div class="badge">
-🏆 OUR SUCCESS STORIES
-</div>
+        <div class="hero-content">
 
-<h1>
-Meet Our <span>Successful Students</span>
-</h1>
-
-<p>
-Every achievement tells a story of dedication, hard work and the right guidance.
-Explore the success stories of Dyuti Institute students across different sessions.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= STATS ================= -->
-
-<section class="stats">
-
-<div class="stat-card">
-
-<div class="icon">🎓</div>
-
-<h3 id="totalStudents">0</h3>
-
-<p>Successful Students</p>
-
-</div>
-
-
-<div class="stat-card">
-
-<div class="icon">🏆</div>
-
-<h3>5+</h3>
-
-<p>Successful Sessions</p>
-
-</div>
-
-
-<div class="stat-card">
-
-<div class="icon">⭐</div>
-
-<h3>100+</h3>
-
-<p>Achievements</p>
-
-</div>
-
-</section>
-
-
-<!-- ================= STUDENTS ================= -->
-
-<main class="container" id="students">
-
-<div class="section-heading">
-
-<h2>Our Success Stories</h2>
-
-<p>
-Select a session to explore our successful students
-</p>
-
-</div>
-
-
-<!-- FILTER -->
-
-<div class="controls" id="sessions">
-
-<div class="sessions">
-
-<button class="session-btn active" data-session="all">
-All Sessions
-</button>
-
-<button class="session-btn" data-session="2025-26">
-2026
-</button>
-
-<button class="session-btn" data-session="2024-25">
-2025
-</button>
-
-<button class="session-btn" data-session="2023-24">
-2024
-</button>
-
-<button class="session-btn" data-session="2022-23">
-2023
-</button>
-
-
-</div>
-
-
-<div class="search-box">
-
-<span class="search-icon">🔍</span>
-
-<input
-type="text"
-id="searchInput"
-placeholder="Search student..."
->
-
-</div>
-
-</div>
-
-
-<!-- STUDENT CARDS -->
-
-<div class="student-grid" id="studentGrid"></div>
-
-
-<div class="empty" id="emptyState">
-
-<div class="emoji">🔎</div>
-
-<h3>No students found</h3>
-
-<p>
-Try another session or search term.
-</p>
-
-</div>
-
-</main>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer id="contact">
-
-<div class="footer-logo">
-Dyuti Institute
-</div>
-
-<p>
-JENPAS(UG) • ANM & GNM
-</p>
-
-<p style="margin-top:8px;">
-Prepare Today. Serve Tomorrow.
-</p>
-
-<div class="copyright">
-© 2026 Dyuti Institute. All Rights Reserved.
-</div>
-
-</footer>
-
-
-<script>
-
-/* =========================================
-   STUDENT DATA
-   Replace image paths with your real photos
-========================================= */
-
-const students = [
-
-/* ================= 2026 ================= */
-
-{
-		name: "MANAMI SARKAR",
-        session: "2025-26",
-        rank: "GMR 1005",
-        course: "B.Sc Nursing",
-        institute: "SAGORE DUTTA MCH",
-        image: "images/students/manami-sarkar.jpg"
-},
-
-{
-		name: "JUHI SULTANA",
-        session: "2025-26",
-        rank: "GMR 1901",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/juhi-sultana.jpg"
-},
-
-{
-		name: "NARGIS PARVIN",
-        session: "2025-26",
-        rank: "GMR 2150",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/nargis-parvin.jpg"
-},
-{
-        name: "MEGHA SARKAR",
-        session: "2025-26",
-        rank: "GMR 2327",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/megha-sarkar.jpg"
-    },
-
-    {
-        name: "SOUMI ROY",
-        session: "2025-26",
-        rank: "GMR 2389",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/soumi-roy.jpg"
-    },
-
-    {
-        name: "TRISA ROY",
-        session: "2025-26",
-        rank: "GMR 2803",
-        course: "B.Sc Nursing",
-        institute: "SAGORE DUTTA MCH",
-        image: "images/students/trisa-roy.jpg"
-    },
-
-    {
-        name: "KABERI BARMAN",
-        session: "2025-26",
-        rank: "GMR 4745",
-        course: "B.Sc Nursing",
-        institute: "SANTINIKETAN CON",
-        image: "images/students/kaberi-barman.jpg"
-    },
-
-    {
-        name: "BIVA SARKAR",
-        session: "2025-26",
-        rank: "GMR 5073",
-        course: "B.Sc Nursing",
-        institute: "SANTINIKETAN CON",
-        image: "images/students/biva-sarkar.jpg"
-    },
-
-    {
-        name: "SHREYASI CHAKRAVORTY",
-        session: "2025-26",
-        rank: "GMR 9533",
-        course: "B.Sc Nursing",
-        institute: "SURI DH",
-        image: "images/students/shreyasi-chakravorty.jpg"
-    },
-{
-        name: "DALIYA BARMAN",
-        session: "2025-26",
-        rank: "GMR 615",
-        course: "ANM Nursing",
-        institute: "NBMCH",
-        image: "images/students/daliya-barman.jpg"
-    },
-
-    {
-        name: "ANINDITA DAS",
-        session: "2025-26",
-        rank: "GMR 997",
-        course: "ANM Nursing",
-        institute: "NBMCH",
-        image: "images/students/anindita-das.jpg"
-    },
-
-    {
-        name: "MANDRITA DAS",
-        session: "2025-26",
-        rank: "GMR 1531",
-        course: "GNM Nursing",
-        institute: "NBMCH",
-        image: "images/students/mandrita-das.jpg"
-    },
-
-    {
-        name: "MRITTIKA RAY",
-        session: "2025-26",
-        rank: "GMR 1679",
-        course: "GNM Nursing",
-        institute: "NBMCH",
-        image: "images/students/mrittika-ray.jpg"
-    },
-
-    {
-        name: "RINKI PARVIN",
-        session: "2025-26",
-        rank: "GMR 2522",
-        course: "GNM Nursing",
-        institute: "JNM MCH",
-        image: "images/students/rinki-parvin.jpg"
-    },
-
-    {
-        name: "BEAUTY BISWAS",
-        session: "2025-26",
-        rank: "GMR 2673",
-        course: "GNM Nursing",
-        institute: "JNM MCH",
-        image: "images/students/beauty-biswas.jpg"
-    },
-
-    {
-        name: "MONALI NANDI",
-        session: "2025-26",
-        rank: "GMR 2790",
-        course: "GNM Nursing",
-        institute: "ALIPURDUAR DH",
-        image: "images/students/monali-nandi.jpg"
-    },
-
-    {
-        name: "BIJALI PARVIN",
-        session: "2025-26",
-        rank: "GMR 4207",
-        course: "GNM Nursing",
-        institute: "KALIMPONG DH",
-        image: "images/students/bijali-parvin.jpg"
-    },
-
-    {
-        name: "DIPANWITA ROY",
-        session: "2025-26",
-        rank: "GMR 5539",
-        course: "GNM Nursing",
-        institute: "MEDINIPUR MCH",
-        image: "images/students/dipanwita-roy.jpg"
-    },
-
-    {
-        name: "ANWESHA BARMAN",
-        session: "2025-26",
-        rank: "GMR 6463",
-        course: "GNM Nursing",
-        institute: "JHARGRAM MCH",
-        image: "images/students/anwesha-barman.jpg"
-    },
-
-    {
-        name: "RIMPA BARMAN",
-        session: "2025-26",
-        rank: "GMR 6696",
-        course: "GNM Nursing",
-        institute: "JHARGRAM MCH",
-        image: "images/students/rimpa-barman.jpg"
-    },
-/* ================= 2025 ================= */
-
- {
-        name: "ANKITA SARKAR",
-        session: "2024-25",
-        rank: "GMR 257",
-        course: "B.Sc Nursing",
-        institute: "MCH KOLKATA",
-        image: "images/students/ankita-sarkar.jpg"
-    },
-
-    {
-        name: "SMRITIPARNA SEN",
-        session: "2024-25",
-        rank: "GMR 304",
-        course: "B.Sc Nursing",
-        institute: "R.G. KAR MCH",
-        image: "images/students/smritiparna-sen.jpg"
-    },
-
-    {
-        name: "PIYALI DATTA",
-        session: "2024-25",
-        rank: "GMR 640",
-        course: "B.Sc Nursing",
-        institute: "R.G. KAR MCH",
-        image: "images/students/piyali-datta.jpg"
-    },
-
-    {
-        name: "MANIDIPA DEY",
-        session: "2024-25",
-        rank: "GMR 654",
-        course: "B.Sc Nursing",
-        institute: "I.D & B.G.",
-        image: "images/students/manidipa-dey.jpg"
-    },
-
-    {
-        name: "RIYA SARKAR",
-        session: "2024-25",
-        rank: "GMR 758",
-        course: "B.Sc Nursing",
-        institute: "SAGORE DUTTA MCH",
-        image: "images/students/riya-sarkar.jpg"
-    },
-
-    {
-        name: "RITA BARMAN",
-        session: "2024-25",
-        rank: "GMR 1607",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/rita-barman.jpg"
-    },
-
-    {
-        name: "SABNAM BEGUM",
-        session: "2024-25",
-        rank: "GMR 1745",
-        course: "B.Sc Nursing",
-        institute: "HOWRAH DH",
-        image: "images/students/sabnam-begum.jpg"
-    },
-
-    {
-        name: "AFCHHANA MANDAL",
-        session: "2024-25",
-        rank: "GMR 1789",
-        course: "B.Sc Nursing",
-        institute: "HOWRAH DH",
-        image: "images/students/afchhana-mandal.jpg"
-    },
-
-    {
-        name: "BARNITA ROY",
-        session: "2024-25",
-        rank: "GMR 2238",
-        course: "B.Sc Nursing",
-        institute: "I.D & B.G.",
-        image: "images/students/barnita-roy.jpg"
-    },
-
-    {
-        name: "PREYOSI ROY",
-        session: "2024-25",
-        rank: "GMR 2940",
-        course: "B.Sc Nursing",
-        institute: "SSCG MCH",
-        image: "images/students/preyosi-roy.jpg"
-    },
-
-    {
-        name: "ARPITA ROY",
-        session: "2024-25",
-        rank: "GMR 3902",
-        course: "B.Sc Nursing",
-        institute: "MATANGINI DH",
-        image: "images/students/arpita-roy.jpg"
-    },
-
-    {
-        name: "ADITY ROY",
-        session: "2024-25",
-        rank: "GMR 4094",
-        course: "B.Sc Nursing",
-        institute: "SANTINIKETAN CON",
-        image: "images/students/adity-roy.jpg"
-    },
-
-    {
-        name: "SURAIYA SULTANA",
-        session: "2024-25",
-        rank: "GMR 330",
-        course: "ANM Nursing",
-        institute: "BARASAT MCH",
-        image: "images/students/suraiya-sultana.jpg"
-    },
-
-    {
-        name: "MANAMI ROY",
-        session: "2024-25",
-        rank: "GMR 1970",
-        course: "ANM Nursing",
-        institute: "I.D & B.G.",
-        image: "images/students/manami-roy.jpg"
-    },
-
-    {
-        name: "TRISHA NAG",
-        session: "2024-25",
-        rank: "GMR 2030",
-        course: "GNM Nursing",
-        institute: "MJN MCH",
-        image: "images/students/trisha-nag.jpg"
-    },
-
-    {
-        name: "ISHITA FARHANA",
-        session: "2024-25",
-        rank: "GMR 2185",
-        course: "GNM Nursing",
-        institute: "ALIPURDUAR DH",
-        image: "images/students/ishita-farhana.jpg"
-    },
-
-    {
-        name: "RIMI SIKDER",
-        session: "2024-25",
-        rank: "GMR 2527",
-        course: "GNM Nursing",
-        institute: "MJN MCH",
-        image: "images/students/rimi-sikder.jpg"
-    },
-
-    {
-        name: "PUJA SARKAR",
-        session: "2024-25",
-        rank: "GMR 5282",
-        course: "GNM Nursing",
-        institute: "TAMROLIPTO MCH",
-        image: "images/students/puja-sarkar.jpg"
-    }
-,
-
-
-/* ================= 2024 ================= */
-
- {
-        name: "SASHISNU BASAK",
-        session: "2023-24",
-        rank: "GMR 237",
-        course: "B.Sc Nursing",
-        institute: "SSKM HOSPITAL",
-        image: "images/students/sashisnu-basak.jpg"
-    },
-
-    {
-        name: "SNEHA ROY",
-        session: "2023-24",
-        rank: "GMR 954",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/sneha-roy.jpg"
-    },
-
-    {
-        name: "NEHA DEBNATH",
-        session: "2023-24",
-        rank: "GMR 1300",
-        course: "B.Sc Nursing",
-        institute: "BURDWAN MCH",
-        image: "images/students/neha-debnath.jpg"
-    },
-
-    {
-        name: "SNEHA ROY",
-        session: "2023-24",
-        rank: "GMR 1544",
-        course: "B.Sc Nursing",
-        institute: "CNMCH",
-        image: "images/students/sneha-roy-2.jpg"
-    },
-
-    {
-        name: "NISE PARVIN",
-        session: "2023-24",
-        rank: "GMR 1942",
-        course: "B.Sc Nursing",
-        institute: "CNMCH",
-        image: "images/students/nise-parvin.jpg"
-    },
-
-    {
-        name: "URMI SAHA",
-        session: "2023-24",
-        rank: "GMR 2405",
-        course: "B.Sc Nursing",
-        institute: "RAHURMAT MCH",
-        image: "images/students/urmi-saha.jpg"
-    },
-
-    {
-        name: "ANKITA ROY",
-        session: "2023-24",
-        rank: "GMR 2419",
-        course: "B.Sc Nursing",
-        institute: "I.D & B.G.",
-        image: "images/students/ankita-roy.jpg"
-    },
-
-    {
-        name: "NIBEDITA SARKAR",
-        session: "2023-24",
-        rank: "GMR 2477",
-        course: "B.Sc Nursing",
-        institute: "ASANSOL ESI",
-        image: "images/students/nibedita-sarkar.jpg"
-    },
-
-    {
-        name: "SAHINA AKTAR",
-        session: "2023-24",
-        rank: "GMR 4434",
-        course: "B.Sc Nursing",
-        institute: "ASANSOL ESI",
-        image: "images/students/sahina-aktar.jpg"
-    },
-
-    {
-        name: "PAWLAMI BARMAN",
-        session: "2023-24",
-        rank: "GMR 5770",
-        course: "B.Sc Nursing",
-        institute: "SURI DH",
-        image: "images/students/pawlami-barman.jpg"
-    },
-
-    {
-        name: "SATARUPA DAS",
-        session: "2023-24",
-        rank: "GMR 6017",
-        course: "B.Sc Nursing",
-        institute: "SANTINIKETAN CON",
-        image: "images/students/satarupa-das.jpg"
-    },
-
-    {
-        name: "PINKI DAS",
-        session: "2023-24",
-        rank: "GMR 850",
-        course: "ANM Nursing",
-        institute: "BARASAT MCH",
-        image: "images/students/pinki-das.jpg"
-    },
-
-    {
-        name: "TANUSHREE MODAK",
-        session: "2023-24",
-        rank: "GMR 2034",
-        course: "GNM Nursing",
-        institute: "NBMCH",
-        image: "images/students/tanushree-modak.jpg"
-    },
-
-    {
-        name: "NUSRAT JAHAN",
-        session: "2023-24",
-        rank: "GMR 2967",
-        course: "GNM Nursing",
-        institute: "NBMCH",
-        image: "images/students/nusrat-jahan.jpg"
-    },
-
-    {
-        name: "NILAM KHATUN",
-        session: "2023-24",
-        rank: "GMR 2325",
-        course: "GNM Nursing",
-        institute: "ALIPURDUAR DH",
-        image: "images/students/nilam-khatun.jpg"
-    },
-
-
-
-/* ================= 2023 ================= */
-
- {
-        name: "RANIK SARKAR",
-        session: "2022-23",
-        rank: "GMR 289",
-        course: "BHA",
-        institute: "JNM HOSPITAL",
-        image: "images/students/ranik-sarkar.jpg"
-    },
-
-    {
-        name: "MOUMITA SHIL",
-        session: "2022-23",
-        rank: "GMR 763",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/moumita-shil.jpg"
-    },
-
-    {
-        name: "PRIYANKA BISWAS",
-        session: "2022-23",
-        rank: "GMR 924",
-        course: "B.Sc Nursing",
-        institute: "NRS MCH",
-        image: "images/students/priyanka-biswas.jpg"
-    },
-
-    {
-        name: "ISHITA KARMAKAR",
-        session: "2022-23",
-        rank: "GMR 1063",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/ishita-karmakar.jpg"
-    },
-
-    {
-        name: "POULAMI DAS",
-        session: "2022-23",
-        rank: "GMR 2404",
-        course: "B.Sc Nursing",
-        institute: "NBMCH",
-        image: "images/students/poulamI-das.jpg"
-    },
-
-    {
-        name: "ASMITA SARKAR",
-        session: "2022-23",
-        rank: "GMR 2983",
-        course: "B.Sc Nursing",
-        institute: "RAMPURHAT MCH",
-        image: "images/students/asmita-sarkar.jpg"
-    },
-
-    {
-        name: "SWASTIKA BARMAN",
-        session: "2022-23",
-        rank: "GMR 4021",
-        course: "B.Sc Nursing",
-        institute: "MURSHIDABAD MCH",
-        image: "images/students/swastika-barman.jpg"
-    },
-
-    {
-        name: "SHRABANI SHAMAL",
-        session: "2022-23",
-        rank: "GMR 4329",
-        course: "B.Sc Nursing",
-        institute: "MURSHIDABAD MCH",
-        image: "images/students/shrabani-shamal.jpg"
-    },
-
-    {
-        name: "ANKITA BARMA",
-        session: "2022-23",
-        rank: "GMR 4473",
-        course: "B.Sc Nursing",
-        institute: "RAMPURHAT MCH",
-        image: "images/students/ankita-barma.jpg"
-    },
-
-    {
-        name: "MAHUA ROY",
-        session: "2022-23",
-        rank: "GMR 5274",
-        course: "B.Sc Nursing",
-        institute: "RAMPURHAT MCH",
-        image: "images/students/mahua-roy.jpg"
-    },
-
-    {
-        name: "DEBI ROY",
-        session: "2022-23",
-        rank: "GMR 6261",
-        course: "B.Sc Nursing",
-        institute: "MATANGINI DH",
-        image: "images/students/debi-roy.jpg"
-    },
-
-    {
-        name: "PRITI INDRA",
-        session: "2022-23",
-        rank: "GMR 6823",
-        course: "B.Sc Nursing",
-        institute: "SURI DH",
-        image: "images/students/priti-indra.jpg"
-    },
-
-    {
-        name: "MONTI ORAON",
-        session: "2022-23",
-        rank: "GMR 20580",
-        course: "GNM Nursing",
-        institute: "MURSHIDABAD MCH",
-        image: "images/students/monti-oraon.jpg"
-    },
-
-    {
-        name: "ANTARA SARKAR",
-        session: "2022-23",
-        rank: "GMR 1344",
-        course: "GNM Nursing",
-        institute: "NRS MCH",
-        image: "images/students/antara-sarkar.jpg"
-    },
-
-    {
-        name: "SAHELI PARVIN",
-        session: "2022-23",
-        rank: "GMR 3362",
-        course: "GNM Nursing",
-        institute: "JALPAIGURI MCH",
-        image: "images/students/saheli-parvin.jpg"
-    },
-
-    {
-        name: "PARVINA KHATUN",
-        session: "2022-23",
-        rank: "GMR 4032",
-        course: "GNM Nursing",
-        institute: "SAMMILANI MCH",
-        image: "images/students/parvina-khatun.jpg"
-    },
-
-
-
-];
-
-
-/* =========================================
-   VARIABLES
-========================================= */
-
-const grid = document.getElementById("studentGrid");
-const emptyState = document.getElementById("emptyState");
-const searchInput = document.getElementById("searchInput");
-const totalStudents = document.getElementById("totalStudents");
-
-let currentSession = "all";
-
-
-/* =========================================
-   RENDER STUDENTS
-========================================= */
-
-function renderStudents(){
-
-    const search = searchInput.value.toLowerCase().trim();
-
-    const filtered = students.filter(student => {
-
-        const matchesSession =
-            currentSession === "all" ||
-            student.session === currentSession;
-
-        const matchesSearch =
-            student.name.toLowerCase().includes(search) ||
-            student.course.toLowerCase().includes(search) ||
-            student.institute.toLowerCase().includes(search);
-
-        return matchesSession && matchesSearch;
-
-    });
-
-
-    grid.innerHTML = "";
-
-
-    if(filtered.length === 0){
-
-        emptyState.style.display = "block";
-
-    }else{
-
-        emptyState.style.display = "none";
-
-    }
-
-
-    filtered.forEach((student,index)=>{
-
-        const card = document.createElement("article");
-
-        card.className = "student-card";
-
-        card.style.animationDelay = `${index * 0.05}s`;
-
-
-        card.innerHTML = `
-
-        <div class="student-image">
-
-            <img
-                src="${student.image}"
-                alt="${student.name}"
-                loading="lazy"
-                onerror="this.src='https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=700&q=80'"
-            >
-
-            <div class="rank">
-                🏆 ${student.rank}
+            <div class="badge">
+                🏆 OUR SUCCESS STORIES
             </div>
 
-            <div class="session-label">
-                Session ${student.session}
+            <h1>
+                Meet Our <span>Successful Students</span>
+            </h1>
+
+            <p>
+                Every achievement tells a story of dedication, hard work and the right guidance.
+                Explore the success stories of Dyuti Institute students across different sessions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="icon">🎓</div>
+
+            <h3 id="totalStudents">0</h3>
+
+            <p>Successful Students</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="icon">🏆</div>
+
+            <h3>5+</h3>
+
+            <p>Successful Sessions</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="icon">⭐</div>
+
+            <h3>100+</h3>
+
+            <p>Achievements</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STUDENTS -->
+    <main class="container" id="students">
+
+        <div class="section-heading">
+
+            <h2>Our Success Stories</h2>
+
+            <p>
+                Select a session to explore our successful students
+            </p>
+
+        </div>
+
+
+        <!-- FILTER -->
+        <div class="controls" id="sessions">
+
+            <div class="sessions">
+
+                <button class="session-btn active" data-session="all">
+                    All Sessions
+                </button>
+
+                <button class="session-btn" data-session="2025-26">
+                    2026
+                </button>
+
+                <button class="session-btn" data-session="2024-25">
+                    2025
+                </button>
+
+                <button class="session-btn" data-session="2023-24">
+                    2024
+                </button>
+
+                <button class="session-btn" data-session="2022-23">
+                    2023
+                </button>
+
+            </div>
+
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search student..."
+                >
+
             </div>
 
         </div>
 
 
-        <div class="student-info">
+        <!-- STUDENT CARDS -->
+        <div
+            class="student-grid"
+            id="studentGrid"
+        ></div>
 
-            <h3>${student.name}</h3>
 
-            <div class="course">
-                ${student.course}
+        <!-- EMPTY STATE -->
+        <div
+            class="empty"
+            id="emptyState"
+        >
+
+            <div class="emoji">
+                🔎
             </div>
 
+            <h3>
+                No students found
+            </h3>
 
-            <div class="details">
-
-                <div class="detail">
-                    🎓
-                    <span>
-                        <strong>Institute:</strong><br>
-                        ${student.institute}
-                    </span>
-                </div>
-
-
-                <div class="detail">
-                    📍
-                    <span>
-                        <strong>Location:</strong><br>
-                        ${student.location}
-                    </span>
-                </div>
-
-
-                <div class="detail">
-                    📅
-                    <span>
-                        <strong>Session:</strong>
-                        ${student.session}
-                    </span>
-                </div>
-
-            </div>
+            <p>
+                Try another session or search term.
+            </p>
 
         </div>
 
-        `;
+    </main>
 
 
-        grid.appendChild(card);
+    <!-- FOOTER -->
+    <footer id="contact">
 
-    });
+        <div class="footer-logo">
+            Dyuti Institute
+        </div>
 
+        <p>
+            JENPAS(UG) • ANM & GNM
+        </p>
 
-    totalStudents.textContent = students.length;
-
-}
-
-
-/* =========================================
-   SESSION BUTTONS
-========================================= */
-
-document.querySelectorAll(".session-btn").forEach(button => {
-
-    button.addEventListener("click",()=>{
-
-        document
-            .querySelectorAll(".session-btn")
-            .forEach(btn => btn.classList.remove("active"));
-
-        button.classList.add("active");
-
-        currentSession = button.dataset.session;
-
-        renderStudents();
-
-    });
-
-});
+        <p class="tagline">
+            Prepare Today. Serve Tomorrow.
+        </p>
 
 
-/* =========================================
-   SEARCH
-========================================= */
+<p style="color:#91aab5;font-size:13px;line-height:1.7;margin-bottom:15px;">
+Gunjabari, Coochbehar<br>
+736101
+</p>
+        <div class="copyright">
+            © 2026 Dyuti Institute. All Rights Reserved.
+        </div>
 
-searchInput.addEventListener("input",renderStudents);
-
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-function toggleMenu(){
-
-    document
-        .getElementById("navLinks")
-        .classList.toggle("show");
-
-}
+    </footer>
 
 
-/* =========================================
-   INITIAL LOAD
-========================================= */
-
-renderStudents();
-
-</script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
-```
